@@ -20,4 +20,4 @@ class BaseModel:
     def save(self):
         self.update_at = datetime.datetime.now()
     def to_dict(self):
-        print (self.__dict__)
+        return (self.__dict__)
