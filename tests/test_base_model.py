@@ -29,7 +29,12 @@ class TestBaseModel(unittest.TestCase):
         guide = pep8.StyleGuide(quit=True)
         rev = guide.check_files(["models/base_model.py"])
         self.assertEqual(rev.total_errors, 0, "Fix Style")
-        
+
+    def test_docstring(self):
+        """Checks for docs"""
+        for doc_fun in dir(BaseModel):
+            self.assertIsNotNone(doc_fun.__doc__)
+
     def test_init(self):
         """Tests for the __init__"""
         self.assertTrue(isinstance(self.base, BaseModel))
