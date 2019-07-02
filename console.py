@@ -2,6 +2,7 @@
 """HBNBCommand Module"""
 
 import cmd
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
@@ -29,7 +30,8 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def create(self):
-        pass
+        elif():
+            pass
 
     def show(self):
         pass
