@@ -14,15 +14,14 @@ class BaseModel:
         self.created_at = my_time
         self.updated_at = my_time
 
+
         if kwargs:
-            print("entra if")
             for key, value in kwargs.items():
                 if key != "__class__":
                     if key == "created_at" or key == "updated_at":
                         value = datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-                setattr(self, key, value)
+                    setattr(self, key, value)
         else:
-            print ("entra else")
             self.id = str(uuid4())
             self.created_at = my_time
             models.storage.new(self)
