@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""BaseModel Model"""
+"""BaseModel Module"""
 
 from models.base_model import BaseModel
 import json
