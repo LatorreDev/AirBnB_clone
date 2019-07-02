@@ -24,6 +24,12 @@ class TestBaseModel(unittest.TestCase):
         except BaseException:
             pass
 
+    def test_pep8(self):
+        """PEP8 style test"""
+        guide = pep8.StyleGuide(quit=True)
+        rev = guide.check_files(["models/base_model.py"])
+        self.assertEqual(rev.total_errors, 0, "Fix Style")
+        
     def test_init(self):
         """Tests for the __init__"""
         self.assertTrue(isinstance(self.base, BaseModel))
