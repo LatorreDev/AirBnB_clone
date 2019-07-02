@@ -28,5 +28,20 @@ class HBNBCommand(cmd.Cmd):
         """If there is no command entered and Return is pressed"""
         pass
 
+    def create(self):
+        pass
+
+    def show(self):
+        pass
+
+    def destroy(self):
+        pass
+
+    def all(self):
+        pass
+
+    def update(self):
+        pass
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
