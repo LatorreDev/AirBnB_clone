@@ -50,6 +50,11 @@ class TestBaseModel(unittest.TestCase):
         self.base.save()
         self.assertNotEqual(self.base.created_at, self.base.updated_at)
 
+    def test_to_dict(self):
+        """Tests to_dict method"""
+        test_dict = self.basemodel.to_dict()
+        self.assertEqual(type(test_dict), dict)
+        self.assertTrue("to_dict" in dir(self.basemodel))
 
 if __name__ == "__main__":
     unittest.main()
