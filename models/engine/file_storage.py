@@ -24,7 +24,7 @@ class FileStorage:
         dictionary = {}
         objects = FileStorage.__objects
 
-        with open(FileStorage.__file_path, 'w', encoding="UTF_8") as file:
+        with open(FileStorage.__file_path, "w", encoding="UTF_8") as file:
             for i in objects:
                 dictionary[i] = objects[i].to_dict()
             file.write(dumps(dictionary))
