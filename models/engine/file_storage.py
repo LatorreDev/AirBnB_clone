@@ -43,7 +43,7 @@ class FileStorage:
                 object = eval(name_class)(**value)
                 FileStorage.__objects[key] = object
 
-    def delete(self, id):
+    def delete(self, class_name, id):
         """Delete an instance from storage"""
-        FileStorage.__objects.pop("{}.{}".format(type(self), id))
+        FileStorage.__objects.pop("{}.{}".format(class_name, id))
         self.save()
