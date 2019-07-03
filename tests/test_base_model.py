@@ -52,9 +52,9 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict(self):
         """Tests to_dict method"""
-        test_dict = self.basemodel.to_dict()
+        test_dict = self.base.to_dict()
         self.assertEqual(type(test_dict), dict)
-        self.assertTrue("to_dict" in dir(self.basemodel))
+        self.assertTrue("to_dict" in dir(self.base))
 
 if __name__ == "__main__":
     unittest.main()
