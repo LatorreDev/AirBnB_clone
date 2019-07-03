@@ -45,5 +45,5 @@ class FileStorage:
 
     def delete(self, class_name, id):
         """Delete an instance from storage"""
-        FileStorage.__objects.pop("{}.{}".format(class_name, id)
+        FileStorage.__objects.pop("{}.{}".format(class_name, id))
         self.save()
