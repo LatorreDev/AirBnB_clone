@@ -24,7 +24,7 @@ class FileStorage:
         dictionary = {}
         objects = FileStorage.__objects
 
-        with open(FileStorage.__file_path, 'w', encoding="UTF_8") as file:
+        with open(FileStorage.__file_path, "w", encoding="UTF_8") as file:
             for i in objects:
                 dictionary[i] = objects[i].to_dict()
             file.write(dumps(dictionary))
@@ -43,7 +43,7 @@ class FileStorage:
                 object = eval(name_class)(**value)
                 FileStorage.__objects[key] = object
 
-    def delete(self, class_name, id):
+    def delete(self, id):
         """Delete an instance from storage"""
-        FileStorage.__objects.pop("{}.{}".format(class_name, id))
+        FileStorage.__objects.pop("{}.{}".format(type(self), id))
         self.save()
