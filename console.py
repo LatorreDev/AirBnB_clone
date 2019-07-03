@@ -2,6 +2,7 @@
 """HBNBCommand Module"""
 
 import cmd
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
@@ -26,6 +27,22 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """If there is no command entered and Return is pressed"""
+        pass
+
+    def create(self):
+        elif():
+            pass
+
+    def show(self):
+        pass
+
+    def destroy(self):
+        pass
+
+    def all(self):
+        pass
+
+    def update(self):
         pass
 
 if __name__ == '__main__':
