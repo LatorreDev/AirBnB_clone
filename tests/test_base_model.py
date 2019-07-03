@@ -39,11 +39,30 @@ class TestBaseModel(unittest.TestCase):
         """Tests for the __init__"""
         self.assertTrue(isinstance(self.base, BaseModel))
 
-    def test_check_attributes(self):
-        """Check if the attributes of the instance exist"""
+    def test_check_public_attributes(self):
+        """Check if the public attributes of the instance exist"""
         self.assertTrue(hasattr(BaseModel, "id"))
         self.assertTrue(hasattr(BaseModel, "created_at"))
         self.assertTrue(hasattr(BaseModel, "updated_at"))
+
+    def test_check_methods(self):
+        """Check if the methods exist"""
+        self.assertTrue(hasattr(BaseModel, "__init__"))
+        self.assertTrue(hasattr(BaseModel, "__str__"))
+        self.assertTrue(hasattr(BaseModel, "save"))
+        self.assertTrue(hasattr(BaseModel, "to_dict"))
+
+    def test_id_assignment(self):
+        """Check if id is being assigned"""
+        self.assertEqual(str, type(self.base.id))
+
+    def test_created_at_assignment(self):
+        """Check if created_at is being assigned"""
+        self.assertEqual(datetime, type(self.base.created_at))
+
+    def test_updated_at_assignment(self):
+        """Check if updated_at is being assigned"""
+        self.assertEqual(datetime, type(self.base.updated_at))
 
     def test_save(self):
         """Tests save method"""
