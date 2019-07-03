@@ -4,6 +4,13 @@
 import cmd
 import sys
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+from models import storage
 import models
 
 
@@ -43,14 +50,38 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
 
-    def do_show(self):
-        pass
+    def do_show(self, args):
+        my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
+        arg_eval = (args.split())
+        if len(arg_eval) == 0:
+            print("** class name missing **")
+        elif arg_eval[0] in my_list:
+            if len(arg_eval) == 1:
+                print ("** instance id missing **")
+            else:
+                pass
+        else:
+            print("** class doesn't exist **")
 
-    def do_destroy(self):
-        pass
+    def do_destroy(self, args):
+        my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
+        arg_eval = (args.split())
+        temp_list = list(models.storage.all().keys())
+        if len(arg_eval) == 0:
+            print("** class name missing **")
+        elif arg_eval[0] in my_list:
+            if len(arg_eval) == 1:
+                print ("** instance id missing **")
+            elif arg_eval[1] is not temp_list:
+                print ("** no instance found **")
+            else:
+                pass
+        else:
+            print("** class doesn't exist **")
 
     def do_all(self):
         pass
+
 
     def do_update(self):
         pass
