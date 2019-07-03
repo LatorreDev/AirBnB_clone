@@ -40,6 +40,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, args):
+        """create method"""
         my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
         arg_eval = (args.split())
         if len(arg_eval) == 0:
@@ -47,10 +48,12 @@ class HBNBCommand(cmd.Cmd):
         elif arg_eval[0] in my_list:
             new_obj = eval(arg_eval[0])(arg_eval[1:])
             print(new_obj.id)
+            new_obj.save()
         else:
             print("** class doesn't exist **")
 
     def do_show(self, args):
+        """show method"""
         my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
         arg_eval = (args.split())
         if len(arg_eval) == 0:
@@ -59,11 +62,15 @@ class HBNBCommand(cmd.Cmd):
             if len(arg_eval) == 1:
                 print ("** instance id missing **")
             else:
-                pass
+                models.storage.reload()
+                my_args = arg_eval[0] + "." + arg_eval[1]
+                if my_args in list(models.storage.all().keys()):
+                    print(models.storage.all()[my_args])
         else:
             print("** class doesn't exist **")
 
     def do_destroy(self, args):
+        """Destroy Method"""
         my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
         arg_eval = (args.split())
         temp_list = list(models.storage.all().keys())
@@ -75,16 +82,31 @@ class HBNBCommand(cmd.Cmd):
             elif arg_eval[1] is not temp_list:
                 print ("** no instance found **")
             else:
-                pass
+                del models.storage.all()[arg_eval]
+                models.storage.save()
         else:
             print("** class doesn't exist **")
 
-    def do_all(self):
-        pass
+    def do_all(self, args):
+        """All Method"""
+        temp_list = []
+        my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
+        arg_eval = (args.split())
+        if arg_eval[0] in  my_list:
+            temp_dict = models.storage.all()
+            for obj_id in temp_dict.keys():
+                if arg_eval[0] in temp_dict:
+                    obj = temp_dict[obj_id]
+                    temp_list.append(str(obj))
+            print(temp_list)
+        else:
+            print("** class name missing **")
 
 
     def do_update(self):
+        """Update Method"""
         pass
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
