@@ -73,7 +73,7 @@ d711be23-73d9-4fbd-92f5-fe9ec7044d6d
 (hbnb)
 ```
 ## Collaborators
-#### [David Latorre](https://www.latorredev.com):earth_americas:
+#### [David Latorre](https://latorredev.com/):earth_americas:
 #### [Miguel Cortes](https://www.github.com/miguel-dev):octocat:
 
 # This project is possible due to:
