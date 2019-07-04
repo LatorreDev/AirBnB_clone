@@ -73,17 +73,20 @@ class HBNBCommand(cmd.Cmd):
         """Destroy Method"""
         my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
         arg_eval = (args.split())
+        my_arg = arg_eval[0] + "." + arg_eval[1]
         temp_list = list(models.storage.all().keys())
         if len(arg_eval) == 0:
             print("** class name missing **")
         elif arg_eval[0] in my_list:
             if len(arg_eval) == 1:
                 print ("** instance id missing **")
-            elif arg_eval[1] is not temp_list:
-                print ("** no instance found **")
-            else:
-                del models.storage.all()[arg_eval]
+            elif my_arg in temp_list:
+                del models.storage.all()[my_arg]
                 models.storage.save()
+                print(arg_eval)
+            else:
+                print ("** no instance found **")
+                print(arg_eval)
         else:
             print("** class doesn't exist **")
 
