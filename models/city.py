@@ -1,4 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+"""city class"""
 
-class City:
-    pass
+from models.base_model import BaseModel
+
+class City(BaseModel):
+    """Class for create a new city"""
+    state_id = ""
+    name = ""
