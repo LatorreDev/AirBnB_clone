@@ -1,7 +1,5 @@
-<p align="center">
-	# The Holberton B&amp;B
-	![alt text](https://github.com/miguel-dev/AirBnB_clone/blob/master/Assets/hbnb.png?raw=true "hbnb image")
-</p>
+# The Holberton B&amp;B
+![alt text](https://github.com/miguel-dev/AirBnB_clone/blob/master/Assets/hbnb.png?raw=true "hbnb image")
 
 ## HBNB The console
 ----
