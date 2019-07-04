@@ -41,9 +41,9 @@ and can start to use the hbnb console
 ## How to use the HBNB console
 ### Syntax:
 ``` <command> <classname> <id>```
+id don't apply to create command
 ### For help:
 ```help <command>```
-id don't apply to create command
 ### Examples:
 #### For Help:
 ```
