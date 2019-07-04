@@ -5,12 +5,20 @@ import cmd
 import sys
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+from models import storage
 import models
 
 
 class HBNBCommand(cmd.Cmd):
     """Command interpreter for HBNB"""
     prompt = "(hbnb)"
+
 
     def do_quit(self, args):
         """Quit command to exit the program"""
@@ -33,38 +41,74 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, args):
+        """create method"""
         my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
-        my_args = args.split()
-        if len(my_args) == 0:
+        arg_eval = (args.split())
+        if len(arg_eval) == 0:
             print("** class name missing **")
-        elif my_args[0] in my_list:
-            new_obj = eval(my_args[0])(my_args[1:])
+        elif arg_eval[0] in my_list:
+            new_obj = eval(arg_eval[0])(arg_eval[1:])
             print(new_obj.id)
+            new_obj.save()
         else:
             print("** class doesn't exist **")
 
     def do_show(self, args):
+        """show method"""
         my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
-        args = args.split()
-        if len(args) == 0:
+        arg_eval = (args.split())
+        if len(arg_eval) == 0:
             print("** class name missing **")
-        elif args[0] in my_list:
-            if len(args) == 1:
-                print("** instance id missing **")
+        elif arg_eval[0] in my_list:
+            if len(arg_eval) == 1:
+                print ("** instance id missing **")
             else:
-                print("Hola, soy un debugger")
-                FileStorage.reload()
-                print(FileStorage.all())
+                models.storage.reload()
+                my_args = arg_eval[0] + "." + arg_eval[1]
+                if my_args in list(models.storage.all().keys()):
+                    print(models.storage.all()[my_args])
         else:
             print("** class doesn't exist **")
 
-    def do_destroy(self):
-        pass
+    def do_destroy(self, args):
+        """Destroy Method"""
+        my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
+        arg_eval = (args.split())
+        my_arg = arg_eval[0] + "." + arg_eval[1]
+        temp_list = list(models.storage.all().keys())
+        if len(arg_eval) == 0:
+            print("** class name missing **")
+        elif arg_eval[0] in my_list:
+            if len(arg_eval) == 1:
+                print ("** instance id missing **")
+            elif my_arg in temp_list:
+                del models.storage.all()[my_arg]
+                models.storage.save()
+                print(arg_eval)
+            else:
+                print ("** no instance found **")
+                print(arg_eval)
+        else:
+            print("** class doesn't exist **")
 
-    def do_all(self):
-        pass
+    def do_all(self, args):
+        """All Method"""
+        temp_list = []
+        my_list = ["User", "City", "Amenity", "Name", "Place", "Review", "BaseModel"]
+        arg_eval = (args.split())
+        if arg_eval[0] in  my_list:
+            temp_dict = models.storage.all()
+            for obj_id in temp_dict.keys():
+                if arg_eval[0] in temp_dict:
+                    obj = temp_dict[obj_id]
+                    temp_list.append(str(obj))
+            print(temp_list)
+        else:
+            print("** class name missing **")
+
 
     def do_update(self):
+        """Update Method"""
         pass
 
 if __name__ == '__main__':
