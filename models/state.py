@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""State class"""
 
-class State:
-    pass
+from models.base_model import BaseModel
+
+class State(BaseModel):
+    """Class for create a new state"""
+    name = ""
