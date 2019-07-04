@@ -40,7 +40,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, args):
-        """create method"""
+        """create a new instace of a class"""
         my_list = ["User", "City", "Amenity", "Name", "Place", "Review",
                    "BaseModel"]
         arg_eval = (args.split())
@@ -54,7 +54,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, args):
-        """show method"""
+        """show the info of an instance of a class"""
         my_list = ["User", "City", "Amenity", "Name", "Place", "Review",
                    "BaseModel"]
         arg_eval = (args.split())
@@ -72,7 +72,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_destroy(self, args):
-        """Destroy Method"""
+        """destroy a instance of a class"""
         my_list = ["User", "City", "Amenity", "Name", "Place", "Review",
                    "BaseModel"]
         arg_eval = (args.split())
@@ -94,7 +94,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_all(self, args):
-        """All Method"""
+        """Show all objects from an instance"""
         temp_list = []
         my_list = ["User", "City", "Amenity", "Name", "Place",
                    "Review", "BaseModel"]
@@ -110,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
 
     def do_update(self):
-        """Update Method"""
+        """update the info of the objects in an instance"""
         pass
 
 
