@@ -1,7 +1,9 @@
-# AirBnB clone
-## The Holberton B&amp;B
+<p align="center">
+# The Holberton B&amp;B
+![alt text](https://github.com/miguel-dev/AirBnB_clone/blob/master/Assets/hbnb.png?raw=true "hbnb image")
+</p>
 
-## The console
+## HBNB The console
 ----
 The console is a Command interpreter to manage AirBnB objects. It would create a new object, retrieve an object, do operations on objects, update attributes of objects and destroy an object. 
 
