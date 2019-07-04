@@ -1,30 +1,80 @@
-# The Holberton B&amp;B
-![alt text](https://github.com/miguel-dev/AirBnB_clone/blob/master/Assets/hbnb.png?raw=true "hbnb image")
-
-## HBNB The console
+# The Holberton B&amp;B                                                                                               
+![alt text](https://github.com/miguel-dev/AirBnB_clone/blob/master/Assets/hbnb.png?raw=true "hbnb image")             
+# Description
+This is a clone of airbnb on the frontend, backend and netowrk infrastructure
+## Backend
+### the HBNB console                                                                                                   
 ----
-The console is a Command interpreter to manage AirBnB objects. It would create a new object, retrieve an object, do operations on objects, update attributes of objects and destroy an object. 
+The console is a Command interpreter to manage AirBnB objects. It would create, retrieve, do operations on objects, update their of objects and destroy an object.                                                                          
+                                                                                                                      
+## Commands and how to use it                                                                                         
+the command interpreter allow us to handle our data requirements with the following commands
+                                                                                                                      
+| Command | Function |                                                                                                
+| ------- | -------- |
+| create | create a new instace of a class |
+| show | show the info of an instance of a class |
+| destroy | destroy a instance of a class |
+| update | update the info of the objects in an instance |
+| all | update the info of the objects in an instance |
+| quit | exit the console |
+| help | show the help of the commands |
 
-A parent class takes care of the initialization, serialization and deserialization of your future instances.
+## Objects
+this is the objects that you can pass to the command console
 
-## How to use it?
-When you see the prompt type ./console.py and press Enter.
+| Object | Function |                                                                                                
+| ------- | -------- |
+| city | city of the reservation |
+| state | country state of the reservation |
+| place | Name of the place of reservation |
+| user | Name of the user who reserves|
+| amenity | Benefits of the place |
+| review | review of the room and the guest |
 
-vagrant@vagrant-ubuntu-trusty-64:~/miguel_cortes/AirBnB_clone$ ./console.py
-(hbnb) help
+### Start using the console
+start the console with
+```./console```
+you will see:
+```(hbnb)```
+and can start to use the hbnb console
+## How to use the HBNB console
+### Syntax:
+``` <command> <classname> <id>```
+### For help:
+```help <command>```
+id don't apply to create command
+### Examples:
+#### For Help:
+```
+(hbnb)help create
+create a new instace of a class
+(hbnb)
+```
+#### For standard commands:
+```
+(hbnb)create User
+993e570d-9b4e-449c-84b3-085ab454d3ce
+(hbnb)
+```
+It will create a new User
+``` 
+(hbnb)create BaseModel
+d711be23-73d9-4fbd-92f5-fe9ec7044d6d
+(hbnb)show BaseModel d711be23-73d9-4fbd-92f5-fe9ec7044d6d
+[BaseModel] (d711be23-73d9-4fbd-92f5-fe9ec7044d6d) {'id': 'd711be23-73d9-4fbd-92f5-fe9ec7044d6d', 'created_at': '2019-07-04T02:20:53.149558', 'updated_at': '2019-07-04T02:20:53.149791'}
+(hbnb)
+ ```
+ It will create a new BaseModel and show the objects of the instance
+ 
+```
+(hbnb)destroy BaseModel d711be23-73d9-4fbd-92f5-fe9ec7044d6d
+['BaseModel', 'd711be23-73d9-4fbd-92f5-fe9ec7044d6d']
+(hbnb)
+```
+## Collaborators
+#### [David Latorre](latorredev.com):earth_americas:
+#### [Miguel Cortes](github.com/miguel-dev):octocat:
 
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-
-(hbnb) 
-(hbnb) help quit
-Quit command to exit the program
-
-(hbnb) 
-(hbnb) 
-(hbnb) quit 
-guillaume@ubuntu:~/AirBnB$ 
-
-# AirBnB_clone
-The Holberton B&amp;B
+# This project is possible due to:
+## [Holberton School](https://www.holbertonschool.com/campus_life/bogota)
