@@ -11,4 +11,5 @@ bottom: 0%;
 footer p
 {
     text-align: center;
+    vertical-align: middle;
 }
