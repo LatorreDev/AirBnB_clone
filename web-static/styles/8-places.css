@@ -20,6 +20,7 @@ article
     margin: 20px;
     border: #FF5A5F solid 1px;
     border-radius: 4px;
+    height: auto;
 }
 
 article h2
