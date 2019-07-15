@@ -4,7 +4,7 @@ header
     height: 70px;
     width: 100%;
     border-bottom:  1px solid #CCCCCC;
-    background-image: url("/AirBnB_clone/web-static/images/logo.png");
+    background-image: url("../images/logo.png");
     background-repeat: no-repeat;
     background-position-x: 20px;
     background-position-y: 50%;
