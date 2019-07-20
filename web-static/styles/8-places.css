@@ -1,8 +1,8 @@
-.places
+.wrapper
 {
-    display: inline-block;
+    display: flex;
     justify-content: center;
-    
+    flex-wrap: wrap;
 }
 
 .places h1
@@ -14,19 +14,26 @@
 
 article
 {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 390px;
     padding: 20px;
     margin: 20px;
     border: #FF5A5F solid 1px;
     border-radius: 4px;
-    height: auto;
+}
+
+.article-title
+{
+    display: flex;
+    justify-content: flex-end;
 }
 
 article h2
 {
     font-size: 30px;
     text-align: center;
+    margin-right: 70px;
 }
 
 .center
@@ -37,21 +44,14 @@ article h2
 
 .price_by_night
 {
-    display: inline-block;
-    position: relative;
     color:#FF5A5F;
     border: #FF5A5F solid 4px;
     border-radius: 50%;
     min-width: 60px;
-    max-width: 60px;
     line-height: 60px;
     height: 60px;
     font-size: 30px;
     text-align: center;
-    vertical-align: middle;
-    left: 320px;
-    bottom: 90px;
-   
 }
 
 .information
@@ -121,3 +121,7 @@ article h2
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+/*
+asdasdasd
+*/
